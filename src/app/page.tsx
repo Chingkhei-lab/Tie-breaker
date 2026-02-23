@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import * as React from "react"; import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Users, Shield, Globe, ShieldPlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -35,21 +35,19 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative h-[300px] md:h-[500px] w-full order-1 md:order-2 rounded-3xl overflow-hidden shadow-2xl"
+            transition={{ duration: 0.8 }}
+            className="relative h-[350px] md:h-[500px] w-full order-1 md:order-2 rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50"
           >
-            {/* REAL HERO IMAGE - Replaces the generic icon box */}
-            <img
-              src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1200&q=80"
-              alt="Advanced Dental Clinic"
-              className="object-cover w-full h-full"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+            {/* AUTO-SLIDING CAROUSEL */}
+            <HeroCarousel />
+
+            {/* Overlay Gradient for Text Readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-teal-900/80 via-transparent to-transparent flex items-end p-8 pointer-events-none">
               <div className="text-white">
                 <p className="font-bold text-lg">Advanced Clinical Technology</p>
-                <p className="text-sm text-slate-200">ISO Certified Manufacturing</p>
+                <p className="text-sm text-teal-100">ISO 13485 Certified Manufacturing</p>
               </div>
             </div>
           </motion.div>
@@ -151,44 +149,60 @@ export default function Home() {
             <h2 className="text-sm font-bold tracking-widest uppercase text-teal-600 mb-2">Before & After</h2>
             <h3 className="text-3xl md:text-5xl font-bold text-slate-900 leading-tight">Clinical Results Gallery</h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <Card className="overflow-hidden border-slate-100 shadow-md">
-                <div className="flex aspect-video bg-slate-200">
-                  <div className="w-1/2 relative border-r-2 border-white">
-                    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800" alt="Before" className="w-full h-full object-cover grayscale" />
-                    <span className="absolute bottom-2 left-2 bg-slate-900/70 text-white text-xs px-2 py-1 rounded">Before</span>
-                  </div>
-                  <div className="w-1/2 relative">
-                    <img src="https://images.unsplash.com/photo-1600171222832-6bf66e949ffb?auto=format&fit=crop&w=800" alt="After" className="w-full h-full object-cover" />
-                    <span className="absolute bottom-2 right-2 bg-teal-600 text-white text-xs px-2 py-1 rounded">After</span>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+            {/* Card 1: Bone Loss - FIXED WITH FREE PUBLIC LINKS */}
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100">
+              <div className="grid grid-cols-2 h-64">
+                <div className="relative group">
+                  {/* New Image: Dental X-Ray (Public) */}
+                  <img
+                    src="https://images.unsplash.com/photo-1606811971618-4486d14f3f72?auto=format&fit=crop&w=800&q=80"
+                    alt="Dental Procedure Before"
+                    className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500"
+                  />
+                  <span className="absolute bottom-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">Pre-Op</span>
                 </div>
-                <CardContent className="p-6">
-                  <h4 className="font-bold text-lg mb-2">Severe Bone Loss Restoration</h4>
-                  <p className="text-slate-600 text-sm">Successful vertical ridge augmentation using Kindway Synthetic Bone Graft, followed by immediate implant placement.</p>
-                </CardContent>
-              </Card>
-            </motion.div>
+                <div className="relative">
+                  {/* New Image: Healthy Gums/Model (Public) */}
+                  <img
+                    src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=800&q=80"
+                    alt="Implant Result"
+                    className="object-cover w-full h-full"
+                  />
+                  <span className="absolute bottom-2 right-2 bg-teal-600 text-white text-xs px-2 py-1 rounded">Healed</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="font-bold text-lg mb-2">Vertical Ridge Augmentation</h3>
+                <p className="text-slate-600 text-sm">Successful bone regeneration using Kindway Synthetic Graft in 4 months.</p>
+              </div>
+            </div>
 
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-              <Card className="overflow-hidden border-slate-100 shadow-md">
-                <div className="flex aspect-video bg-slate-200">
-                  <div className="w-1/2 relative border-r-2 border-white">
-                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800" alt="Surgery" className="w-full h-full object-cover grayscale" />
-                    <span className="absolute bottom-2 left-2 bg-slate-900/70 text-white text-xs px-2 py-1 rounded">Surgery</span>
-                  </div>
-                  <div className="w-1/2 relative">
-                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800" alt="Result" className="w-full h-full object-cover" />
-                    <span className="absolute bottom-2 right-2 bg-teal-600 text-white text-xs px-2 py-1 rounded">Result</span>
-                  </div>
+            {/* Card 2: Full Arch - REAL MEDICAL IMAGES */}
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100">
+              <div className="grid grid-cols-2 h-64">
+                <div className="relative">
+                  <img
+                    src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800"
+                    alt="Surgery Room"
+                    className="object-cover w-full h-full"
+                  />
+                  <span className="absolute bottom-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">Procedure</span>
                 </div>
-                <CardContent className="p-6">
-                  <h4 className="font-bold text-lg mb-2">Full Arch Rehabilitation</h4>
-                  <p className="text-slate-600 text-sm">Patient treated with 4 Kindway Titanium Dental Implants supporting a fixed prosthesis.</p>
-                </CardContent>
-              </Card>
-            </motion.div>
+                <div className="relative">
+                  <img
+                    src="https://images.unsplash.com/photo-1588776813158-cef395252c7b?auto=format&fit=crop&w=800"
+                    alt="Final Smile"
+                    className="object-cover w-full h-full"
+                  />
+                  <span className="absolute bottom-2 right-2 bg-teal-600 text-white text-xs px-2 py-1 rounded">Final Prosthesis</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="font-bold text-lg mb-2">Full Arch Rehabilitation</h3>
+                <p className="text-slate-600 text-sm">Immediate loading protocol using 4 Titanium Implants with fixed zirconia bridge.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -287,6 +301,38 @@ export default function Home() {
 
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-teal-900/20 rounded-full blur-3xl pointer-events-none"></div>
       </section>
+    </div>
+  );
+}
+
+function HeroCarousel() {
+  const [index, setIndex] = React.useState(0);
+  const images = [
+    "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80", // Dental Clinic Blue
+    "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80", // Lab/Science
+    "https://images.unsplash.com/photo-1606811971618-4486d14f3f72?auto=format&fit=crop&w=1200&q=80"  // Dentist working
+  ];
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 4000); // Slides every 4 seconds
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="absolute inset-0 w-full h-full">
+      {images.map((img, i) => (
+        <motion.img
+          key={img}
+          src={img}
+          alt="Clinic Slide"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: i === index ? 1 : 0 }}
+          transition={{ duration: 1 }}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      ))}
     </div>
   );
 }
