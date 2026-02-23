@@ -19,7 +19,7 @@ const products = [
         name: "Titanium Dental Implant",
         category: "Implants",
         description: "High-grade titanium alloy implant engineered for superior osseointegration and long-term stability in all bone types.",
-        image: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=800&q=80",
+        image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=800&q=80",
         features: ["Grade 5 Titanium (Ti-6Al-4V)", "Self-tapping thread design", "SLA micro-surface texturing"],
         specs: { material: "Grade 5 Titanium", sizes: "3.5mm, 4.0mm, 4.5mm, 5.0mm diameter", lengths: "8mm to 16mm", surface: "SLA (Sandblasted, Large-grit, Acid-etched)", torque: "Up to 70 Ncm" },
         price: "₹ 3,500 per unit"
@@ -29,7 +29,7 @@ const products = [
         name: "Synthetic Bone Graft",
         category: "Regenerative",
         description: "Bioactive synthetic granules designed to stimulate natural bone formation and accelerate healing in defect sites.",
-        image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80",
+        image: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=800&q=80",
         features: ["Osteoconductive matrix", "Fast resorption rate", "Granule size: 0.5-1mm"],
         specs: { material: "β-TCP + Hydroxyapatite (60:40)", sizes: "0.25g, 0.5g, 1.0g, 2.0g vials", porosity: "65-80%", resorption: "4-6 months", sterilization: "Gamma irradiated" },
         price: "₹ 2,800 per vial"

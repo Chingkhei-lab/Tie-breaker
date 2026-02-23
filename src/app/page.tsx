@@ -156,8 +156,8 @@ export default function Home() {
                 <div className="relative group">
                   {/* Verified Image: Dental Lab/Pre-Op */}
                   <img
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
-                    alt="Dental Procedure Before"
+                    src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800&q=80"
+                    alt="Bone Defect Before"
                     className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
                   <span className="absolute bottom-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">Pre-Op</span>
@@ -165,8 +165,8 @@ export default function Home() {
                 <div className="relative">
                   {/* Verified Image: Medical Office/Healed */}
                   <img
-                    src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
-                    alt="Implant Result"
+                    src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=80"
+                    alt="Healed Result"
                     className="object-cover w-full h-full"
                   />
                   <span className="absolute bottom-2 right-2 bg-teal-600 text-white text-xs px-2 py-1 rounded">Healed</span>
@@ -184,8 +184,8 @@ export default function Home() {
                 <div className="relative">
                   {/* Verified Image: Surgery Room */}
                   <img
-                    src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80"
-                    alt="Surgery Room"
+                    src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=800&q=80"
+                    alt="Surgery Procedure"
                     className="object-cover w-full h-full"
                   />
                   <span className="absolute bottom-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">Procedure</span>
@@ -193,7 +193,7 @@ export default function Home() {
                 <div className="relative">
                   {/* Verified Image: Dental Clinic Final */}
                   <img
-                    src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80"
+                    src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80"
                     alt="Final Smile"
                     className="object-cover w-full h-full"
                   />
@@ -228,8 +228,8 @@ export default function Home() {
                   "The primary stability achieved with Kindway implants is phenomenal. It has significantly streamlined my immediate loading protocols. The workshops were an added bonus, offering great practical insights."
                 </p>
                 <div className="flex items-center gap-4 mt-4">
-                  <div className="h-12 w-12 rounded-full bg-slate-200 border-2 border-white shadow-sm overflow-hidden flex items-center justify-center font-bold text-slate-500 text-sm">
-                    Dr. P
+                  <div className="h-12 w-12 rounded-full bg-slate-200 border-2 border-white shadow-sm overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=200&q=80" alt="Dr. Patel" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900">Dr. Patel</h4>
@@ -249,8 +249,8 @@ export default function Home() {
                   "Kindway BioReZens' synthetic bone grafts are incredibly reliable. I've observed excellent radiographic fill and soft tissue healing. They offer premium quality at a price point that makes sense for my practice."
                 </p>
                 <div className="flex items-center gap-4 mt-4">
-                  <div className="h-12 w-12 rounded-full bg-slate-200 border-2 border-white shadow-sm overflow-hidden flex items-center justify-center font-bold text-slate-500 text-sm">
-                    Dr. S
+                  <div className="h-12 w-12 rounded-full bg-slate-200 border-2 border-white shadow-sm overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=200&q=80" alt="Dr. Sharma" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900">Dr. Sharma</h4>
@@ -270,8 +270,8 @@ export default function Home() {
                   "Attending their training seminar completely changed how our clinic handles complex augmentations. The mobile setup they demonstrate is brilliant in its efficiency and hygiene standards."
                 </p>
                 <div className="flex items-center gap-4 mt-4">
-                  <div className="h-12 w-12 rounded-full bg-slate-200 border-2 border-white shadow-sm overflow-hidden flex items-center justify-center font-bold text-slate-500 text-sm">
-                    Dr. M
+                  <div className="h-12 w-12 rounded-full bg-slate-200 border-2 border-white shadow-sm overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=200&q=80" alt="Dr. Mehta" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900">Dr. Mehta</h4>
@@ -310,9 +310,9 @@ export default function Home() {
 function HeroCarousel() {
   const [index, setIndex] = React.useState(0);
   const images = [
-    "https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1200&q=80", // Surgery Room
-    "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80", // Lab/Science
-    "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80"  // Dental Medical office
+    "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80", // Clean Blue Dental Clinic
+    "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80", // Patient Smiling
+    "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80"  // Lab/Research Vibe
   ];
 
   React.useEffect(() => {

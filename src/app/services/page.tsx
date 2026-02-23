@@ -77,7 +77,7 @@ export default function ServicesPage() {
                 <div className="space-y-4">
                     <div className="h-[300px] bg-slate-200 rounded-2xl overflow-hidden shadow-xl">
                         <img
-                            src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80"
+                            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80"
                             alt="Mobile Dental Van"
                             className="object-cover w-full h-full"
                         />
