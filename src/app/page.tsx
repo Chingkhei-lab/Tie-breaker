@@ -156,7 +156,7 @@ export default function Home() {
                 <div className="relative group">
                   {/* Verified Image: Dental Lab/Pre-Op */}
                   <img
-                    src="https://images.unsplash.com/photo-1588776814546-1ffcfef07a3c?auto=format&fit=crop&w=800&q=80"
+                    src="https://images.pexels.com/photos/305568/pexels-photo-305568.jpeg?auto=compress&cs=tinysrgb&w=800"
                     alt="Clinical Case Before"
                     className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
@@ -165,7 +165,7 @@ export default function Home() {
                 <div className="relative">
                   {/* Verified Image: Medical Office/Healed */}
                   <img
-                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
+                    src="https://images.pexels.com/photos/3845744/pexels-photo-3845744.jpeg?auto=compress&cs=tinysrgb&w=800"
                     alt="Clinical Case After"
                     className="object-cover w-full h-full"
                   />
@@ -184,7 +184,7 @@ export default function Home() {
                 <div className="relative">
                   {/* Verified Image: Surgery Room */}
                   <img
-                    src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=800&q=80"
+                    src="https://images.pexels.com/photos/7584489/pexels-photo-7584489.jpeg?auto=compress&cs=tinysrgb&w=800"
                     alt="Surgery Procedure"
                     className="object-cover w-full h-full"
                   />
@@ -193,7 +193,7 @@ export default function Home() {
                 <div className="relative">
                   {/* Verified Image: Dental Clinic Final */}
                   <img
-                    src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80"
+                    src="https://images.pexels.com/photos/6629397/pexels-photo-6629397.jpeg?auto=compress&cs=tinysrgb&w=800"
                     alt="Laboratory Process"
                     className="object-cover w-full h-full"
                   />

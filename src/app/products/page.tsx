@@ -18,8 +18,8 @@ const products = [
         name: "Titanium Dental Implant",
         category: "Implants",
         description: "High-grade titanium alloy implant engineered for superior osseointegration and long-term stability in all bone types.",
-        // VISUAL: Metal screw / Industrial precision
-        image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=800&q=80",
+        // VISUAL: Grey/silver metal screw with threads. NO PILLS.
+        image: "https://images.pexels.com/photos/259988/pexels-photo-259988.jpeg?auto=compress&cs=tinysrgb&w=800",
         features: ["Grade 5 Titanium (Ti-6Al-4V)", "Self-tapping thread design", "SLA micro-surface texturing"],
         specs: { material: "Grade 5 Titanium", sizes: "3.5mm, 4.0mm, 4.5mm, 5.0mm diameter", lengths: "8mm to 16mm", surface: "SLA (Sandblasted, Large-grit, Acid-etched)", torque: "Up to 70 Ncm" },
         price: "₹ 3,500 per unit"
@@ -29,8 +29,8 @@ const products = [
         name: "Synthetic Bone Graft",
         category: "Regenerative",
         description: "Bioactive synthetic granules designed to stimulate natural bone formation and accelerate healing in defect sites.",
-        // VISUAL: White granules / Lab powder
-        image: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=800&q=80",
+        // VISUAL: White grainy powder or small particles in a clear vial/jar.
+        image: "https://images.pexels.com/photos/3639206/pexels-photo-3639206.jpeg?auto=compress&cs=tinysrgb&w=800",
         features: ["Osteoconductive matrix", "Fast resorption rate", "Granule size: 0.5-1mm"],
         specs: { material: "β-TCP + Hydroxyapatite (60:40)", sizes: "0.25g, 0.5g, 1.0g, 2.0g vials", porosity: "65-80%", resorption: "4-6 months", sterilization: "Gamma irradiated" },
         price: "₹ 2,800 per vial"
@@ -40,8 +40,8 @@ const products = [
         name: "Collagen Membrane",
         category: "Regenerative",
         description: "Resorbable collagen barrier membrane for Guided Bone Regeneration (GBR) that maintains space for new bone growth.",
-        // VISUAL: White textured material
-        image: "https://images.unsplash.com/photo-1618220179428-82790e7dfa19?auto=format&fit=crop&w=800&q=80",
+        // VISUAL: Small, white, square piece of fabric/material.
+        image: "https://images.pexels.com/photos/8465945/pexels-photo-8465945.jpeg?auto=compress&cs=tinysrgb&w=800",
         features: ["Type I & III porcine collagen", "Bilayer design", "12-24 week resorption"],
         specs: { material: "Type I/III Collagen", sizes: "15x20mm, 20x30mm, 30x40mm", thickness: "0.3mm", resorption: "12-24 weeks", sterilization: "Double blister pack, EO sterilized" },
         price: "₹ 4,200 per membrane"
@@ -51,8 +51,8 @@ const products = [
         name: "Healing Abutment Kit",
         category: "Prosthetics",
         description: "Precision-machined healing abutments for optimal soft tissue contouring during the healing phase post-implant placement.",
-        // VISUAL: Metal dental tools
-        image: "https://images.unsplash.com/photo-1588776814546-1ffcfef07a3c?auto=format&fit=crop&w=800&q=80",
+        // VISUAL: Small metal dental components/screws on a surgical tray.
+        image: "https://images.pexels.com/photos/13207320/pexels-photo-13207320.jpeg?auto=compress&cs=tinysrgb&w=800",
         features: ["Mirror-polished surface", "Multiple gingival heights", "Color-coded for easy ID"],
         specs: { material: "Grade 5 Titanium, Anodized", sizes: "Narrow, Regular, Wide platform", heights: "2mm, 4mm, 6mm gingival height", connection: "Internal Hex & Conical Morse Taper", kit: "12-piece assorted kit" },
         price: "₹ 8,500 per kit"
@@ -62,8 +62,8 @@ const products = [
         name: "PRF Centrifuge System",
         category: "Equipment",
         description: "Table-top centrifuge calibrated for Platelet-Rich Fibrin (PRF) preparation, essential for regenerative procedures.",
-        // VISUAL: Centrifuge machine
-        image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80",
+        // VISUAL: White, boxy medical machine with a lid.
+        image: "https://images.pexels.com/photos/6629397/pexels-photo-6629397.jpeg?auto=compress&cs=tinysrgb&w=800",
         features: ["Fixed 2700 RPM protocol", "8x10ml tube capacity", "Digital timer & auto-stop"],
         specs: { type: "Fixed-angle centrifuge", rpm: "2700 RPM (Choukroun Protocol)", capacity: "8 x 10ml blood tubes", timer: "Digital, 1-30 min programmable", power: "220V AC, 50Hz", weight: "3.5 kg" },
         price: "₹ 18,000 per unit"
@@ -73,8 +73,8 @@ const products = [
         name: "Surgical Implant Motor",
         category: "Equipment",
         description: "Brushless, torque-controlled implant motor with 20:1 contra-angle handpiece for precise and safe implant placement.",
-        // VISUAL: Dental drill handpiece
-        image: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=80",
+        // VISUAL: A machine with a screen and a connected drill pen/wire. NO BRAINS.
+        image: "https://images.pexels.com/photos/6502344/pexels-photo-6502344.jpeg?auto=compress&cs=tinysrgb&w=800",
         features: ["Torque range: 5-80 Ncm", "Brushless motor", "Integrated irrigation pump"],
         specs: { type: "Brushless Electric Motor", speed: "300 - 40,000 RPM", torque: "5 - 80 Ncm (adjustable)", handpiece: "20:1 Contra-angle included", display: "LED touchscreen", irrigation: "Integrated peristaltic pump" },
         price: "₹ 45,000 per unit"
