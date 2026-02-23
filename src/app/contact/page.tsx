@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Mail, Phone, MapPin, Maximize2, Navigation } from "lucide-react";
+import { Mail, Phone, MapPin, Maximize2, Navigation, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const MAP_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.123456!2d77.2195!3d28.6315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd37b741d057%3A0xcdee88e47393c3f1!2sConnaught%20Place%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1708704000000!5m2!1sen!2sin";
 const DIRECTIONS_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d14008.5!2d77.2195!3d28.6315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x0%3A0x0!2sCurrent+Location!3m2!1d28.63!2d77.22!4m5!1s0x390cfd37b741d057%3A0xcdee88e47393c3f1!2sConnaught+Place+New+Delhi!3m2!1d28.6315!2d77.2195!5e0!3m2!1sen!2sin";
@@ -91,7 +92,7 @@ export default function ContactPage() {
                         </div>
                     </div>
 
-                    <div className="flex gap-3">
+                    <div className="flex flex-col sm:flex-row gap-3">
                         <Button
                             className="flex-1 bg-slate-900 hover:bg-slate-800"
                             onClick={() => setIsMapOpen(true)}
@@ -154,6 +155,22 @@ export default function ContactPage() {
                     </div>
                 </DialogContent>
             </Dialog>
+
+            {/* QUICK LINKS CTA */}
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <Link href="/products" className="flex items-center justify-between p-5 bg-slate-900 text-white rounded-xl hover:bg-slate-800 transition-colors group">
+                    <span className="font-bold">View Product Catalogue</span>
+                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link href="/training" className="flex items-center justify-between p-5 bg-teal-600 text-white rounded-xl hover:bg-teal-700 transition-colors group">
+                    <span className="font-bold">Book Your Training Slot</span>
+                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link href="/education" className="flex items-center justify-between p-5 bg-slate-100 text-slate-900 rounded-xl hover:bg-slate-200 transition-colors group">
+                    <span className="font-bold">Explore Education Hub</span>
+                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+            </div>
         </div>
     );
 }

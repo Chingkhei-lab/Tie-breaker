@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
@@ -330,6 +331,22 @@ export default function EducationPage() {
                     </article>
                 </DialogContent>
             </Dialog>
+
+            {/* CTA BANNER */}
+            <div className="bg-teal-600 rounded-2xl p-8 md:p-12 mt-16 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="text-white">
+                    <h2 className="text-2xl md:text-3xl font-bold mb-2">Put Knowledge Into Practice</h2>
+                    <p className="text-teal-100">Join our hands-on workshops and master the techniques you just read about.</p>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto shrink-0">
+                    <Button asChild className="bg-white text-teal-700 hover:bg-teal-50 shadow-lg text-base h-12 px-6 font-bold">
+                        <Link href="/training">Register for Workshop <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                    </Button>
+                    <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 shadow-lg h-12 px-6 font-bold">
+                        <Link href="/products">View Product Catalogue</Link>
+                    </Button>
+                </div>
+            </div>
         </div>
     );
 }
