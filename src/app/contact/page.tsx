@@ -7,10 +7,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Mail, Phone, MapPin, Maximize2, Navigation } from "lucide-react";
 
-const MAP_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83923192776!2d77.06889754725782!3d28.52728034389636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1708704000000!5m2!1sen!2sin";
+const MAP_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.123456!2d77.2195!3d28.6315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd37b741d057%3A0xcdee88e47393c3f1!2sConnaught%20Place%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1708704000000!5m2!1sen!2sin";
+const DIRECTIONS_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d14008.5!2d77.2195!3d28.6315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x0%3A0x0!2sCurrent+Location!3m2!1d28.63!2d77.22!4m5!1s0x390cfd37b741d057%3A0xcdee88e47393c3f1!2sConnaught+Place+New+Delhi!3m2!1d28.6315!2d77.2195!5e0!3m2!1sen!2sin";
 
 export default function ContactPage() {
     const [isMapOpen, setIsMapOpen] = useState(false);
+    const [isDirectionsOpen, setIsDirectionsOpen] = useState(false);
 
     return (
         <div className="container mx-auto py-16 px-4">
@@ -99,11 +101,9 @@ export default function ContactPage() {
                         <Button
                             variant="outline"
                             className="flex-1"
-                            asChild
+                            onClick={() => setIsDirectionsOpen(true)}
                         >
-                            <a href="https://maps.google.com/?q=New+Delhi+India" target="_blank" rel="noopener noreferrer">
-                                <Navigation className="mr-2 h-4 w-4" /> Get Directions
-                            </a>
+                            <Navigation className="mr-2 h-4 w-4" /> Get Directions
                         </Button>
                     </div>
                 </div>
@@ -112,14 +112,38 @@ export default function ContactPage() {
             {/* FULLSCREEN MAP DIALOG */}
             <Dialog open={isMapOpen} onOpenChange={setIsMapOpen}>
                 <DialogContent className="sm:max-w-[90vw] h-[85vh] p-0 overflow-hidden">
-                    <DialogHeader className="p-4 pb-0 absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-white via-white/90 to-transparent">
+                    <DialogHeader className="p-4 pb-2 absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-white via-white/95 to-transparent">
                         <DialogTitle className="text-xl font-bold flex items-center gap-2">
-                            <MapPin className="h-5 w-5 text-teal-600" /> Kindway BioReZens — New Delhi, India
+                            <MapPin className="h-5 w-5 text-teal-600" /> Kindway BioReZens
                         </DialogTitle>
+                        <p className="text-sm text-slate-500">Connaught Place, New Delhi, Delhi 110001, India</p>
                     </DialogHeader>
-                    <div className="w-full h-full pt-14">
+                    <div className="w-full h-full pt-16">
                         <iframe
                             src={MAP_EMBED_URL}
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                        />
+                    </div>
+                </DialogContent>
+            </Dialog>
+
+            {/* DIRECTIONS DIALOG */}
+            <Dialog open={isDirectionsOpen} onOpenChange={setIsDirectionsOpen}>
+                <DialogContent className="sm:max-w-[90vw] h-[85vh] p-0 overflow-hidden">
+                    <DialogHeader className="p-4 pb-2 absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-white via-white/95 to-transparent">
+                        <DialogTitle className="text-xl font-bold flex items-center gap-2">
+                            <Navigation className="h-5 w-5 text-teal-600" /> Directions to Kindway BioReZens
+                        </DialogTitle>
+                        <p className="text-sm text-slate-500">Connaught Place, New Delhi, Delhi 110001, India</p>
+                    </DialogHeader>
+                    <div className="w-full h-full pt-16">
+                        <iframe
+                            src={DIRECTIONS_EMBED_URL}
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}
