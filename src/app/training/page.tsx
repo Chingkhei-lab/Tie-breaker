@@ -1,84 +1,163 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Calendar, MapPin, Clock } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Calendar, MapPin, Clock, User, CheckCircle2 } from "lucide-react";
+
+// --- RELATABLE DENTAL CONTENT DATA ---
+const COURSES = [
+    {
+        id: 1,
+        title: "Advanced Sinus Lift Protocols",
+        date: "15 Mar 2026",
+        location: "New Delhi, India",
+        type: "Hands-on Surgery",
+        instructor: "Dr. R. Mehta, Oral Surgeon",
+        price: "₹ 25,000",
+        syllabus: ["Lateral Window Technique", "Managing Perforations", "Piezo-surgery Basics"],
+        description: "Master the art of vertical bone height augmentation using the lateral window approach. Includes goat-jaw hands-on practice."
+    },
+    {
+        id: 2,
+        title: "Immediate Loading: All-on-X",
+        date: "22 Apr 2026",
+        location: "Mumbai, India",
+        type: "Certification",
+        instructor: "Dr. Sarah Williams",
+        price: "₹ 45,000",
+        syllabus: ["Tilted Implant Concepts", "Multi-unit Abutment Selection", "Prosthetic Conversion"],
+        description: "A comprehensive guide to full-arch rehabilitation. Learn how to deliver teeth-in-a-day using the Kindway Implant System."
+    },
+    {
+        id: 3,
+        title: "Soft Tissue Management",
+        date: "10 May 2026",
+        location: "Bangalore, India",
+        type: "Masterclass",
+        instructor: "Dr. A. Patel",
+        price: "₹ 15,000",
+        syllabus: ["Free Gingival Grafts", "Connective Tissue Grafts", "Suturing Techniques"],
+        description: "Achieve superior aesthetic results by mastering soft tissue handling around implants."
+    }
+];
 
 export default function TrainingPage() {
+    const [selectedCourse, setSelectedCourse] = useState<any>(null);
+    const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+
     return (
         <div className="container mx-auto py-16 px-4">
             <div className="flex flex-col md:flex-row justify-between items-center mb-12">
                 <div>
                     <h1 className="text-4xl font-bold text-slate-900 mb-2">Workshops & <span className="text-teal-600">Training</span></h1>
-                    <p className="text-slate-600">Master advanced implantology with our hands-on courses.</p>
+                    <p className="text-slate-600">Upgrade your clinical skills with industry-leading experts.</p>
                 </div>
                 <Button size="lg" className="mt-4 md:mt-0 bg-teal-600 hover:bg-teal-700">
-                    Download Course Brochure
+                    Download 2026 Course Calendar
                 </Button>
             </div>
 
-            <Tabs defaultValue="upcoming" className="w-full">
-                <TabsList className="grid w-full grid-cols-2 max-w-[400px] mb-8">
-                    <TabsTrigger value="upcoming">Upcoming Events</TabsTrigger>
-                    <TabsTrigger value="past">Past Workshops</TabsTrigger>
-                </TabsList>
-
-                <TabsContent value="upcoming" className="space-y-6">
-                    {/* Workshop Card 1 */}
-                    <div className="flex flex-col md:flex-row border rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all">
-                        <div className="bg-teal-600 text-white p-6 flex flex-col items-center justify-center min-w-[150px]">
-                            <span className="text-3xl font-bold">15</span>
-                            <span className="text-lg uppercase">Mar</span>
-                            <span className="text-teal-100">2026</span>
-                        </div>
-                        <div className="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <h3 className="text-xl font-bold mb-2">Advanced Bone Grafting Techniques</h3>
-                                <div className="flex flex-wrap gap-4 text-sm text-slate-500 mb-4">
-                                    <span className="flex items-center gap-1"><MapPin size={16} /> New Delhi, India</span>
-                                    <span className="flex items-center gap-1"><Clock size={16} /> 2 Days (Hands-on)</span>
+            <div className="space-y-6">
+                {COURSES.map((course) => (
+                    <Card key={course.id} className="overflow-hidden hover:shadow-md transition-shadow">
+                        <div className="flex flex-col md:flex-row">
+                            <div className="bg-slate-900 text-white p-6 flex flex-col items-center justify-center min-w-[150px] text-center">
+                                <span className="text-3xl font-bold">{course.date.split(" ")[0]}</span>
+                                <span className="text-lg uppercase">{course.date.split(" ")[1]}</span>
+                                <Badge variant="outline" className="mt-2 text-teal-400 border-teal-400">{course.type}</Badge>
+                            </div>
+                            <CardContent className="p-6 flex-1 flex flex-col justify-between">
+                                <div>
+                                    <h3 className="text-xl font-bold mb-2 text-slate-900">{course.title}</h3>
+                                    <div className="flex flex-wrap gap-4 text-sm text-slate-500 mb-4">
+                                        <span className="flex items-center gap-1"><MapPin size={16} /> {course.location}</span>
+                                        <span className="flex items-center gap-1"><User size={16} /> {course.instructor}</span>
+                                    </div>
+                                    <p className="text-slate-600 mb-4">{course.description}</p>
                                 </div>
-                                <p className="text-slate-600 mb-4">
-                                    Learn vertical and horizontal ridge augmentation using the latest synthetic materials.
-                                </p>
-                            </div>
-                            <div className="flex gap-3">
-                                <Button className="bg-slate-900 text-white">Register Now</Button>
-                                <Button variant="outline">View Details</Button>
-                            </div>
+                                <div className="flex gap-3">
+                                    <Button
+                                        className="bg-teal-600 hover:bg-teal-700"
+                                        onClick={() => { setSelectedCourse(course); setIsRegisterOpen(true); }}
+                                    >
+                                        Register Now
+                                    </Button>
+                                    <Button variant="outline" onClick={() => setSelectedCourse(course)}>
+                                        View Details
+                                    </Button>
+                                </div>
+                            </CardContent>
+                        </div>
+                    </Card>
+                ))}
+            </div>
+
+            {/* VIEW DETAILS DIALOG (POPUP) */}
+            <Dialog open={!!selectedCourse && !isRegisterOpen} onOpenChange={(open) => !open && setSelectedCourse(null)}>
+                <DialogContent className="sm:max-w-[500px]">
+                    <DialogHeader>
+                        <DialogTitle className="text-2xl font-bold text-teal-700">{selectedCourse?.title}</DialogTitle>
+                        <DialogDescription className="text-lg font-medium text-slate-700">
+                            Instructor: {selectedCourse?.instructor}
+                        </DialogDescription>
+                    </DialogHeader>
+                    <div className="py-4">
+                        <h4 className="font-semibold mb-3">Course Syllabus:</h4>
+                        <ul className="space-y-2">
+                            {selectedCourse?.syllabus.map((item: string, i: number) => (
+                                <li key={i} className="flex items-center gap-2 text-slate-600">
+                                    <CheckCircle2 size={16} className="text-teal-600" /> {item}
+                                </li>
+                            ))}
+                        </ul>
+                        <div className="mt-6 p-4 bg-slate-50 rounded-lg border border-slate-100 flex justify-between items-center">
+                            <span className="text-slate-500">Course Fee:</span>
+                            <span className="text-xl font-bold text-slate-900">{selectedCourse?.price}</span>
                         </div>
                     </div>
+                    <Button className="w-full bg-slate-900" onClick={() => setIsRegisterOpen(true)}>Proceed to Registration</Button>
+                </DialogContent>
+            </Dialog>
 
-                    {/* Workshop Card 2 */}
-                    <div className="flex flex-col md:flex-row border rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all">
-                        <div className="bg-slate-800 text-white p-6 flex flex-col items-center justify-center min-w-[150px]">
-                            <span className="text-3xl font-bold">22</span>
-                            <span className="text-lg uppercase">Apr</span>
-                            <span className="text-slate-300">2026</span>
+            {/* REGISTER SHEET (SIDEBAR FORM) */}
+            <Sheet open={isRegisterOpen} onOpenChange={setIsRegisterOpen}>
+                <SheetContent className="overflow-y-auto">
+                    <SheetHeader>
+                        <SheetTitle>Secure Your Seat</SheetTitle>
+                        <SheetDescription>
+                            Registering for: <span className="font-bold text-teal-600">{selectedCourse?.title}</span>
+                        </SheetDescription>
+                    </SheetHeader>
+                    <div className="space-y-6 mt-8">
+                        <div className="space-y-2">
+                            <Label>Full Name (Dr.)</Label>
+                            <Input placeholder="e.g. Dr. Rajesh Kumar" />
                         </div>
-                        <div className="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <h3 className="text-xl font-bold mb-2">Basics of Implant Surgery</h3>
-                                <div className="flex flex-wrap gap-4 text-sm text-slate-500 mb-4">
-                                    <span className="flex items-center gap-1"><MapPin size={16} /> Mumbai, India</span>
-                                    <span className="flex items-center gap-1"><Clock size={16} /> 3 Days (Certification)</span>
-                                </div>
-                                <p className="text-slate-600 mb-4">
-                                    A comprehensive starter course for general dentists looking to start implant practice.
-                                </p>
-                            </div>
-                            <div className="flex gap-3">
-                                <Button className="bg-teal-600 hover:bg-teal-700 text-white">Register Now</Button>
-                                <Button variant="outline">View Details</Button>
-                            </div>
+                        <div className="space-y-2">
+                            <Label>Email Address</Label>
+                            <Input type="email" placeholder="doctor@clinic.com" />
                         </div>
+                        <div className="space-y-2">
+                            <Label>Mobile Number</Label>
+                            <Input type="tel" placeholder="+91 98765 43210" />
+                        </div>
+                        <div className="space-y-2">
+                            <Label>DCI Registration Number</Label>
+                            <Input placeholder="DCI-XXXX" />
+                        </div>
+                        <Button className="w-full bg-teal-600 hover:bg-teal-700 text-lg h-12">
+                            Confirm & Pay {selectedCourse?.price}
+                        </Button>
+                        <p className="text-xs text-center text-slate-400">Secure Payment Gateway via Razorpay</p>
                     </div>
-                </TabsContent>
-
-                <TabsContent value="past">
-                    <p className="text-slate-500 italic">Archive of past events...</p>
-                </TabsContent>
-            </Tabs>
+                </SheetContent>
+            </Sheet>
         </div>
     );
 }
