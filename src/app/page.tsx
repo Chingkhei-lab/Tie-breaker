@@ -42,8 +42,8 @@ export default function Home() {
           >
             {/* REAL HERO IMAGE - Replaces the generic icon box */}
             <img
-              src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800"
-              alt="Dentist performing surgery"
+              src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1200&q=80"
+              alt="Advanced Dental Clinic"
               className="object-cover w-full h-full"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
@@ -156,11 +156,11 @@ export default function Home() {
               <Card className="overflow-hidden border-slate-100 shadow-md">
                 <div className="flex aspect-video bg-slate-200">
                   <div className="w-1/2 relative border-r-2 border-white">
-                    <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=400&q=80" alt="Before" className="w-full h-full object-cover grayscale" />
+                    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800" alt="Dental X-Ray Before" className="w-full h-full object-cover grayscale" />
                     <span className="absolute bottom-2 left-2 bg-slate-900/70 text-white text-xs px-2 py-1 rounded">Before</span>
                   </div>
                   <div className="w-1/2 relative">
-                    <img src="https://images.unsplash.com/photo-1598256989800-fea5ce5146f2?auto=format&fit=crop&w=400&q=80" alt="After" className="w-full h-full object-cover" />
+                    <img src="https://plus.unsplash.com/premium_photo-1661777196224-bfda51e61cfd?auto=format&fit=crop&w=800" alt="Healthy Smile After" className="w-full h-full object-cover" />
                     <span className="absolute bottom-2 right-2 bg-teal-600 text-white text-xs px-2 py-1 rounded">After</span>
                   </div>
                 </div>
@@ -175,12 +175,12 @@ export default function Home() {
               <Card className="overflow-hidden border-slate-100 shadow-md">
                 <div className="flex aspect-video bg-slate-200">
                   <div className="w-1/2 relative border-r-2 border-white">
-                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80" alt="Before" className="w-full h-full object-cover grayscale" />
-                    <span className="absolute bottom-2 left-2 bg-slate-900/70 text-white text-xs px-2 py-1 rounded">Before</span>
+                    <img src="https://images.unsplash.com/photo-1606811841689-2303919a6572?auto=format&fit=crop&w=800" alt="Surgery Process" className="w-full h-full object-cover grayscale" />
+                    <span className="absolute bottom-2 left-2 bg-slate-900/70 text-white text-xs px-2 py-1 rounded">Surgery</span>
                   </div>
                   <div className="w-1/2 relative">
-                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=400&q=80" alt="After" className="w-full h-full object-cover" />
-                    <span className="absolute bottom-2 right-2 bg-teal-600 text-white text-xs px-2 py-1 rounded">After</span>
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800" alt="Final Implant Result" className="w-full h-full object-cover" />
+                    <span className="absolute bottom-2 right-2 bg-teal-600 text-white text-xs px-2 py-1 rounded">Result</span>
                   </div>
                 </div>
                 <CardContent className="p-6">
