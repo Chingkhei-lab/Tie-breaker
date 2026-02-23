@@ -27,7 +27,7 @@ export default function AboutPage() {
                 <div className="flex-1 h-[400px] w-full bg-slate-200 rounded-2xl overflow-hidden relative">
                     {/* REPLACE WITH REAL IMAGE URL */}
                     <img
-                        src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=800"
+                        src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800"
                         alt="Lab Team"
                         className="object-cover w-full h-full"
                     />

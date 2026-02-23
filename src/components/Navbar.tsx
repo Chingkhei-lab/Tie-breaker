@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -24,6 +25,7 @@ const navLinks = [
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = React.useState(false);
+    const pathname = usePathname();
 
     return (
         <motion.header
@@ -49,15 +51,21 @@ export default function Navbar() {
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex flex-1 items-center justify-center gap-6">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            href={link.href}
-                            className="text-sm font-medium text-slate-600 transition-colors hover:text-teal-600 dark:text-slate-300 dark:hover:text-teal-400 min-h-[44px] flex items-center"
-                        >
-                            {link.name}
-                        </Link>
-                    ))}
+                    {navLinks.map((link) => {
+                        const isActive = pathname === link.href;
+                        return (
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                className={`text-sm font-medium transition-colors hover:text-teal-600 min-h-[44px] flex items-center ${isActive
+                                    ? "text-teal-600 dark:text-teal-400"
+                                    : "text-slate-600 dark:text-slate-300 dark:hover:text-teal-400"
+                                    }`}
+                            >
+                                {link.name}
+                            </Link>
+                        );
+                    })}
                 </nav>
 
                 {/* Desktop CTA */}
@@ -83,16 +91,22 @@ export default function Navbar() {
                         {/* Header Title inside mobile canvas to adhere to Shadcn accessibility */}
                         <div className="sr-only">Mobile Navigation Menu</div>
                         <nav className="flex flex-col gap-4 mt-8">
-                            {navLinks.map((link) => (
-                                <Link
-                                    key={link.name}
-                                    href={link.href}
-                                    onClick={() => setIsOpen(false)}
-                                    className="block text-lg font-medium text-slate-800 transition-colors hover:text-teal-600 min-h-[44px] py-2 dark:text-slate-200"
-                                >
-                                    {link.name}
-                                </Link>
-                            ))}
+                            {navLinks.map((link) => {
+                                const isActive = pathname === link.href;
+                                return (
+                                    <Link
+                                        key={link.name}
+                                        href={link.href}
+                                        onClick={() => setIsOpen(false)}
+                                        className={`block text-lg font-medium transition-colors hover:text-teal-600 min-h-[44px] py-2 ${isActive
+                                                ? "text-teal-600 dark:text-teal-400"
+                                                : "text-slate-800 dark:text-slate-200"
+                                            }`}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                );
+                            })}
                             <Button asChild className="bg-teal-600 hover:bg-teal-700 text-white min-h-[44px] mt-4 w-full">
                                 <Link href="/products" onClick={() => setIsOpen(false)}>
                                     View Product Catalogue

@@ -21,7 +21,7 @@ export default function ServicesPage() {
                 <div className="h-[400px] bg-slate-200 rounded-2xl overflow-hidden shadow-xl">
                     {/* REPLACE WITH REAL IMAGE URL */}
                     <img
-                        src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800"
+                        src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800"
                         alt="Mobile Dental Van"
                         className="object-cover w-full h-full"
                     />
