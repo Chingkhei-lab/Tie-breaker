@@ -38,13 +38,19 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative h-[300px] md:h-[500px] w-full order-1 md:order-2"
+            className="relative h-[300px] md:h-[500px] w-full order-1 md:order-2 rounded-3xl overflow-hidden shadow-2xl"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-teal-50 to-teal-200 rounded-3xl overflow-hidden shadow-xl flex items-center justify-center border-4 border-white">
-              <ShieldPlus className="h-32 w-32 text-teal-600/20" />
-              <span className="absolute bottom-6 font-semibold text-teal-800 bg-white/80 backdrop-blur px-6 py-2 rounded-full shadow-sm text-sm">
-                Advanced Dental Manufacturing
-              </span>
+            {/* REAL HERO IMAGE - Replaces the generic icon box */}
+            <img
+              src="https://images.unsplash.com/photo-1606811971618-4486d14f3f72?auto=format&fit=crop&w=800"
+              alt="Dentist performing surgery"
+              className="object-cover w-full h-full"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+              <div className="text-white">
+                <p className="font-bold text-lg">Advanced Clinical Technology</p>
+                <p className="text-sm text-slate-200">ISO Certified Manufacturing</p>
+              </div>
             </div>
           </motion.div>
         </div>
