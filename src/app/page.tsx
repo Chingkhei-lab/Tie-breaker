@@ -156,8 +156,8 @@ export default function Home() {
                 <div className="relative group">
                   {/* Verified Image: Dental Lab/Pre-Op */}
                   <img
-                    src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800&q=80"
-                    alt="Bone Defect Before"
+                    src="https://images.unsplash.com/photo-1588776814546-1ffcfef07a3c?auto=format&fit=crop&w=800&q=80"
+                    alt="Clinical Case Before"
                     className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
                   <span className="absolute bottom-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">Pre-Op</span>
@@ -165,8 +165,8 @@ export default function Home() {
                 <div className="relative">
                   {/* Verified Image: Medical Office/Healed */}
                   <img
-                    src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=80"
-                    alt="Healed Result"
+                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
+                    alt="Clinical Case After"
                     className="object-cover w-full h-full"
                   />
                   <span className="absolute bottom-2 right-2 bg-teal-600 text-white text-xs px-2 py-1 rounded">Healed</span>
@@ -193,8 +193,8 @@ export default function Home() {
                 <div className="relative">
                   {/* Verified Image: Dental Clinic Final */}
                   <img
-                    src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80"
-                    alt="Final Smile"
+                    src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80"
+                    alt="Laboratory Process"
                     className="object-cover w-full h-full"
                   />
                   <span className="absolute bottom-2 right-2 bg-teal-600 text-white text-xs px-2 py-1 rounded">Final Result</span>

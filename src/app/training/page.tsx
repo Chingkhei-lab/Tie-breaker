@@ -100,7 +100,7 @@ export default function TrainingPage() {
             </div>
 
             {/* VIEW DETAILS DIALOG (POPUP) */}
-            <Dialog open={!!selectedCourse && !isRegisterOpen} onOpenChange={(open) => !open && setSelectedCourse(null)}>
+            <Dialog open={!!selectedCourse && !isRegisterOpen} onOpenChange={(open) => { if (!open && !isRegisterOpen) setSelectedCourse(null); }}>
                 <DialogContent className="sm:max-w-[500px]">
                     <DialogHeader>
                         <DialogTitle className="text-2xl font-bold text-teal-700">{selectedCourse?.title}</DialogTitle>
@@ -111,7 +111,7 @@ export default function TrainingPage() {
                     <div className="py-4">
                         <h4 className="font-semibold mb-3">Course Syllabus:</h4>
                         <ul className="space-y-2">
-                            {selectedCourse?.syllabus.map((item: string, i: number) => (
+                            {selectedCourse?.syllabus?.map((item: string, i: number) => (
                                 <li key={i} className="flex items-center gap-2 text-slate-600">
                                     <CheckCircle2 size={16} className="text-teal-600" /> {item}
                                 </li>

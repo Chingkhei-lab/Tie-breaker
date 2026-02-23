@@ -28,11 +28,8 @@ export default function Navbar() {
     const pathname = usePathname();
 
     return (
-        <motion.header
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm"
+        <header
+            className="sticky top-0 z-[100] w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm"
         >
             <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-8">
 
@@ -62,8 +59,8 @@ export default function Navbar() {
                                 key={link.name}
                                 href={link.href}
                                 className={`text-sm font-medium transition-colors px-3 py-2 rounded-full ${isActive
-                                        ? "bg-teal-600 text-white font-bold shadow-md"
-                                        : "text-slate-600 hover:text-teal-600 hover:bg-teal-50 dark:text-slate-300 dark:hover:text-teal-400"
+                                    ? "bg-teal-600 text-white font-bold shadow-md"
+                                    : "text-slate-600 hover:text-teal-600 hover:bg-teal-50 dark:text-slate-300 dark:hover:text-teal-400"
                                     }`}
                             >
                                 {link.name}
@@ -109,8 +106,8 @@ export default function Navbar() {
                                                 href={link.href}
                                                 onClick={() => setIsOpen(false)}
                                                 className={`text-lg font-medium py-2 border-b transition-colors ${isActive
-                                                        ? "text-teal-600 font-bold border-l-4 border-teal-600 pl-3 bg-teal-50 rounded-r-md border-b-slate-100"
-                                                        : "text-slate-700 hover:text-teal-600 border-b-slate-100"
+                                                    ? "text-teal-600 font-bold border-l-4 border-teal-600 pl-3 bg-teal-50 rounded-r-md border-b-slate-100"
+                                                    : "text-slate-700 hover:text-teal-600 border-b-slate-100"
                                                     }`}
                                             >
                                                 {link.name}
@@ -129,6 +126,6 @@ export default function Navbar() {
                 </div>
 
             </div>
-        </motion.header>
+        </header>
     );
 }
