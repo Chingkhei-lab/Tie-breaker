@@ -150,22 +150,22 @@ export default function Home() {
             <h3 className="text-3xl md:text-5xl font-bold text-slate-900 leading-tight">Clinical Results Gallery</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-            {/* Card 1: Bone Loss - FIXED WITH FREE PUBLIC LINKS */}
+            {/* Card 1: Bone Loss */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100">
               <div className="grid grid-cols-2 h-64">
                 <div className="relative group">
-                  {/* New Image: Dental X-Ray (Public) */}
+                  {/* Verified Image: Dental Lab/Pre-Op */}
                   <img
-                    src="https://images.unsplash.com/photo-1606811971618-4486d14f3f72?auto=format&fit=crop&w=800&q=80"
+                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
                     alt="Dental Procedure Before"
                     className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
                   <span className="absolute bottom-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">Pre-Op</span>
                 </div>
                 <div className="relative">
-                  {/* New Image: Healthy Gums/Model (Public) */}
+                  {/* Verified Image: Medical Office/Healed */}
                   <img
-                    src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=800&q=80"
+                    src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
                     alt="Implant Result"
                     className="object-cover w-full h-full"
                   />
@@ -178,24 +178,26 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Card 2: Full Arch - REAL MEDICAL IMAGES */}
+            {/* Card 2: Full Arch */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100">
               <div className="grid grid-cols-2 h-64">
                 <div className="relative">
+                  {/* Verified Image: Surgery Room */}
                   <img
-                    src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800"
+                    src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80"
                     alt="Surgery Room"
                     className="object-cover w-full h-full"
                   />
                   <span className="absolute bottom-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">Procedure</span>
                 </div>
                 <div className="relative">
+                  {/* Verified Image: Dental Clinic Final */}
                   <img
-                    src="https://images.unsplash.com/photo-1588776813158-cef395252c7b?auto=format&fit=crop&w=800"
+                    src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80"
                     alt="Final Smile"
                     className="object-cover w-full h-full"
                   />
-                  <span className="absolute bottom-2 right-2 bg-teal-600 text-white text-xs px-2 py-1 rounded">Final Prosthesis</span>
+                  <span className="absolute bottom-2 right-2 bg-teal-600 text-white text-xs px-2 py-1 rounded">Final Result</span>
                 </div>
               </div>
               <div className="p-6">
@@ -308,9 +310,9 @@ export default function Home() {
 function HeroCarousel() {
   const [index, setIndex] = React.useState(0);
   const images = [
-    "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80", // Dental Clinic Blue
+    "https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1200&q=80", // Surgery Room
     "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80", // Lab/Science
-    "https://images.unsplash.com/photo-1606811971618-4486d14f3f72?auto=format&fit=crop&w=1200&q=80"  // Dentist working
+    "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80"  // Dental Medical office
   ];
 
   React.useEffect(() => {
@@ -321,7 +323,7 @@ function HeroCarousel() {
   }, []);
 
   return (
-    <div className="absolute inset-0 w-full h-full">
+    <div className="absolute inset-0 w-full h-full bg-slate-100">
       {images.map((img, i) => (
         <motion.img
           key={img}
