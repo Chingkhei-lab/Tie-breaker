@@ -34,3 +34,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+SYSTEM_PROMPT.md
+QA_CHECKLIST.md
