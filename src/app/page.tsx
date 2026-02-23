@@ -42,7 +42,7 @@ export default function Home() {
           >
             {/* REAL HERO IMAGE - Replaces the generic icon box */}
             <img
-              src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1200&q=80"
+              src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1200&q=80"
               alt="Advanced Dental Clinic"
               className="object-cover w-full h-full"
             />
@@ -156,11 +156,11 @@ export default function Home() {
               <Card className="overflow-hidden border-slate-100 shadow-md">
                 <div className="flex aspect-video bg-slate-200">
                   <div className="w-1/2 relative border-r-2 border-white">
-                    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800" alt="Dental X-Ray Before" className="w-full h-full object-cover grayscale" />
+                    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800" alt="Before" className="w-full h-full object-cover grayscale" />
                     <span className="absolute bottom-2 left-2 bg-slate-900/70 text-white text-xs px-2 py-1 rounded">Before</span>
                   </div>
                   <div className="w-1/2 relative">
-                    <img src="https://plus.unsplash.com/premium_photo-1661777196224-bfda51e61cfd?auto=format&fit=crop&w=800" alt="Healthy Smile After" className="w-full h-full object-cover" />
+                    <img src="https://images.unsplash.com/photo-1600171222832-6bf66e949ffb?auto=format&fit=crop&w=800" alt="After" className="w-full h-full object-cover" />
                     <span className="absolute bottom-2 right-2 bg-teal-600 text-white text-xs px-2 py-1 rounded">After</span>
                   </div>
                 </div>
@@ -175,11 +175,11 @@ export default function Home() {
               <Card className="overflow-hidden border-slate-100 shadow-md">
                 <div className="flex aspect-video bg-slate-200">
                   <div className="w-1/2 relative border-r-2 border-white">
-                    <img src="https://images.unsplash.com/photo-1606811841689-2303919a6572?auto=format&fit=crop&w=800" alt="Surgery Process" className="w-full h-full object-cover grayscale" />
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800" alt="Surgery" className="w-full h-full object-cover grayscale" />
                     <span className="absolute bottom-2 left-2 bg-slate-900/70 text-white text-xs px-2 py-1 rounded">Surgery</span>
                   </div>
                   <div className="w-1/2 relative">
-                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800" alt="Final Implant Result" className="w-full h-full object-cover" />
+                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800" alt="Result" className="w-full h-full object-cover" />
                     <span className="absolute bottom-2 right-2 bg-teal-600 text-white text-xs px-2 py-1 rounded">Result</span>
                   </div>
                 </div>
