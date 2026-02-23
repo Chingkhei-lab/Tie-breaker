@@ -50,6 +50,7 @@ const COURSES = [
 export default function TrainingPage() {
     const [selectedCourse, setSelectedCourse] = useState<any>(null);
     const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+    const [isCalendarOpen, setIsCalendarOpen] = useState(false);
 
     return (
         <div className="container mx-auto py-16 px-4">
@@ -58,8 +59,8 @@ export default function TrainingPage() {
                     <h1 className="text-4xl font-bold text-slate-900 mb-2">Workshops & <span className="text-teal-600">Training</span></h1>
                     <p className="text-slate-600">Upgrade your clinical skills with industry-leading experts.</p>
                 </div>
-                <Button size="lg" className="mt-4 md:mt-0 bg-teal-600 hover:bg-teal-700">
-                    Download 2026 Course Calendar
+                <Button size="lg" className="mt-4 md:mt-0 bg-teal-600 hover:bg-teal-700" onClick={() => setIsCalendarOpen(true)}>
+                    <Calendar className="mr-2 h-5 w-5" /> View 2026 Course Calendar
                 </Button>
             </div>
 
@@ -126,7 +127,7 @@ export default function TrainingPage() {
             </Dialog>
 
             {/* REGISTER SHEET (SIDEBAR FORM) */}
-            <Sheet open={isRegisterOpen} onOpenChange={setIsRegisterOpen}>
+            <Sheet open={isRegisterOpen} onOpenChange={(open) => { setIsRegisterOpen(open); if (!open) setSelectedCourse(null); }}>
                 <SheetContent className="overflow-y-auto">
                     <SheetHeader>
                         <SheetTitle>Secure Your Seat</SheetTitle>
@@ -158,6 +159,35 @@ export default function TrainingPage() {
                     </div>
                 </SheetContent>
             </Sheet>
+
+            {/* COURSE CALENDAR DIALOG */}
+            <Dialog open={isCalendarOpen} onOpenChange={setIsCalendarOpen}>
+                <DialogContent className="sm:max-w-[550px]">
+                    <DialogHeader>
+                        <DialogTitle className="text-2xl font-bold text-slate-900 flex items-center gap-2">
+                            <Calendar className="h-6 w-6 text-teal-600" /> 2026 Course Calendar
+                        </DialogTitle>
+                        <DialogDescription>Upcoming workshops and certifications by Kindway BioReZens.</DialogDescription>
+                    </DialogHeader>
+                    <div className="space-y-4 py-4">
+                        {COURSES.map((course) => (
+                            <div key={course.id} className="flex gap-4 items-start p-4 rounded-xl border border-slate-100 hover:bg-slate-50 transition-colors">
+                                <div className="bg-teal-600 text-white rounded-lg px-3 py-2 text-center min-w-[60px] shrink-0">
+                                    <span className="text-xl font-bold block leading-none">{course.date.split(" ")[0]}</span>
+                                    <span className="text-xs uppercase">{course.date.split(" ")[1]}</span>
+                                </div>
+                                <div className="flex-1">
+                                    <h4 className="font-bold text-slate-900">{course.title}</h4>
+                                    <p className="text-sm text-slate-500 flex items-center gap-1 mt-1"><MapPin size={12} /> {course.location}</p>
+                                    <Badge variant="outline" className="mt-2 text-xs">{course.type} &middot; {course.price}</Badge>
+                                </div>
+                                <Button size="sm" variant="ghost" className="text-teal-600 shrink-0" onClick={() => { setIsCalendarOpen(false); setSelectedCourse(course); setIsRegisterOpen(true); }}>Register</Button>
+                            </div>
+                        ))}
+                    </div>
+                    <p className="text-xs text-center text-slate-400 pt-2 border-t">All dates subject to confirmation. Early bird discounts available.</p>
+                </DialogContent>
+            </Dialog>
         </div>
     );
 }

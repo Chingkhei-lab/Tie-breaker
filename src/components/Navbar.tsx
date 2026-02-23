@@ -2,9 +2,9 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Menu } from "lucide-react";
-import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { Menu, ShieldCheck } from "lucide-react";
+import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -17,10 +17,10 @@ const navLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Products", href: "/products" },
-    { name: "Training & Workshops", href: "/training" },
     { name: "Education", href: "/education" },
-    { name: "Mobile Dental Clinic", href: "/services" },
-    { name: "Contact Us", href: "/contact" },
+    { name: "Workshops", href: "/training" },
+    { name: "Mobile Clinic", href: "/services" },
+    { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -34,32 +34,36 @@ export default function Navbar() {
             transition={{ duration: 0.5 }}
             className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm"
         >
-            <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-8">
-                <div className="flex items-center gap-2">
+            <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-8">
+
+                {/* LEFT SIDE: LOGO & BRAND */}
+                <div className="flex-shrink-0 flex items-center gap-2">
                     <Link href="/" className="flex items-center space-x-2">
-                        {/* Added Logo Icon */}
-                        <div className="h-8 w-8 bg-teal-600 rounded-lg flex items-center justify-center text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                            </svg>
+                        <div className="h-10 w-10 bg-teal-600 rounded-xl flex items-center justify-center text-white shadow-md">
+                            <ShieldCheck size={24} />
                         </div>
-                        <span className="text-xl font-bold tracking-tight text-slate-800 dark:text-white">
-                            Kindway<span className="text-teal-600">BioReZens</span>
-                        </span>
+                        <div className="flex flex-col leading-none">
+                            <span className="text-xl font-bold tracking-tight text-slate-800 dark:text-white">
+                                Kindway<span className="text-teal-600">BioReZens</span>
+                            </span>
+                            <span className="text-[10px] uppercase tracking-wider font-semibold text-slate-500">
+                                Biotech Innovations
+                            </span>
+                        </div>
                     </Link>
                 </div>
 
-                {/* Desktop Navigation */}
-                <nav className="hidden md:flex flex-1 items-center justify-center gap-6">
+                {/* CENTER: NAVIGATION LINKS (Hidden on Mobile) */}
+                <nav className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-1">
                     {navLinks.map((link) => {
                         const isActive = pathname === link.href;
                         return (
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className={`text-sm font-bold transition-all px-4 py-2 rounded-full min-h-[44px] flex items-center ${isActive
-                                    ? "bg-teal-50 text-teal-700 shadow-sm dark:bg-teal-900/30 dark:text-teal-400"
-                                    : "text-slate-600 hover:bg-slate-50 hover:text-teal-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-teal-400"
+                                className={`text-sm font-medium transition-colors px-3 py-2 rounded-full ${isActive
+                                        ? "bg-teal-600 text-white font-bold shadow-md"
+                                        : "text-slate-600 hover:text-teal-600 hover:bg-teal-50 dark:text-slate-300 dark:hover:text-teal-400"
                                     }`}
                             >
                                 {link.name}
@@ -68,53 +72,62 @@ export default function Navbar() {
                     })}
                 </nav>
 
-                {/* Desktop CTA */}
-                <div className="hidden md:flex items-center gap-4">
-                    <Button asChild className="bg-teal-600 hover:bg-teal-700 text-white min-h-[44px] font-semibold">
+                {/* RIGHT SIDE: CTA BUTTON (Hidden on Mobile) */}
+                <div className="hidden lg:flex flex-shrink-0 items-center gap-4">
+                    <Button asChild className="bg-slate-900 hover:bg-slate-800 text-white shadow-lg font-semibold">
                         <Link href="/products">View Product Catalogue</Link>
                     </Button>
                 </div>
 
-                {/* Mobile Navigation */}
-                <Sheet open={isOpen} onOpenChange={setIsOpen}>
-                    <SheetTrigger asChild>
-                        <Button
-                            variant="ghost"
-                            size="icon"
-                            className="md:hidden min-h-[44px] min-w-[44px]"
-                            aria-label="Toggle Menu"
-                        >
-                            <Menu className="h-6 w-6" />
-                        </Button>
-                    </SheetTrigger>
-                    <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                        {/* Header Title inside mobile canvas to adhere to Shadcn accessibility */}
-                        <div className="sr-only">Mobile Navigation Menu</div>
-                        <nav className="flex flex-col gap-4 mt-8">
-                            {navLinks.map((link) => {
-                                const isActive = pathname === link.href;
-                                return (
-                                    <Link
-                                        key={link.name}
-                                        href={link.href}
-                                        onClick={() => setIsOpen(false)}
-                                        className={`block text-lg font-bold transition-all min-h-[44px] py-3 px-4 rounded-xl ${isActive
-                                            ? "bg-teal-50 text-teal-700 border-l-4 border-teal-600 dark:bg-teal-900/30 dark:text-teal-400 dark:border-teal-400"
-                                            : "text-slate-800 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800"
-                                            }`}
-                                    >
-                                        {link.name}
-                                    </Link>
-                                );
-                            })}
-                            <Button asChild className="bg-teal-600 hover:bg-teal-700 text-white min-h-[44px] mt-4 w-full">
-                                <Link href="/products" onClick={() => setIsOpen(false)}>
-                                    View Product Catalogue
-                                </Link>
+                {/* MOBILE MENU TRIGGER (Hamburger) */}
+                <div className="lg:hidden flex items-center">
+                    <Sheet open={isOpen} onOpenChange={setIsOpen}>
+                        <SheetTrigger asChild>
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                className="h-10 w-10"
+                                aria-label="Toggle Menu"
+                            >
+                                <Menu className="h-6 w-6" />
                             </Button>
-                        </nav>
-                    </SheetContent>
-                </Sheet>
+                        </SheetTrigger>
+                        <SheetContent side="right" className="w-[300px]">
+                            <div className="flex flex-col gap-6 mt-8">
+                                <div className="flex items-center gap-2 mb-4">
+                                    <div className="h-8 w-8 bg-teal-600 rounded-lg flex items-center justify-center text-white">
+                                        <ShieldCheck size={18} />
+                                    </div>
+                                    <span className="font-bold text-lg">Menu</span>
+                                </div>
+                                <nav className="flex flex-col gap-2">
+                                    {navLinks.map((link) => {
+                                        const isActive = pathname === link.href;
+                                        return (
+                                            <Link
+                                                key={link.name}
+                                                href={link.href}
+                                                onClick={() => setIsOpen(false)}
+                                                className={`text-lg font-medium py-2 border-b transition-colors ${isActive
+                                                        ? "text-teal-600 font-bold border-l-4 border-teal-600 pl-3 bg-teal-50 rounded-r-md border-b-slate-100"
+                                                        : "text-slate-700 hover:text-teal-600 border-b-slate-100"
+                                                    }`}
+                                            >
+                                                {link.name}
+                                            </Link>
+                                        );
+                                    })}
+                                </nav>
+                                <Button asChild className="bg-teal-600 hover:bg-teal-700 text-white w-full mt-4">
+                                    <Link href="/products" onClick={() => setIsOpen(false)}>
+                                        View Product Catalogue
+                                    </Link>
+                                </Button>
+                            </div>
+                        </SheetContent>
+                    </Sheet>
+                </div>
+
             </div>
         </motion.header>
     );
