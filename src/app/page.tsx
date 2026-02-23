@@ -138,6 +138,81 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Clinical Results & Testimonials */}
+      <section className="py-24 bg-white w-full border-t border-slate-100">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-sm font-bold tracking-widest uppercase text-teal-600 mb-2">Social Proof</h2>
+            <h3 className="text-3xl md:text-5xl font-bold text-slate-900 leading-tight">Trusted by Clinicians <br className="hidden md:block" /> Worldwide</h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
+              <div className="bg-slate-50 p-8 rounded-3xl h-full flex flex-col gap-6 shadow-sm border border-slate-100 relative">
+                <div className="text-teal-500 absolute top-8 right-8 text-6xl opacity-20 font-serif">"</div>
+                <div className="flex gap-1 text-teal-500">
+                  {"★★★★★".split("").map((star, i) => <span key={i}>{star}</span>)}
+                </div>
+                <p className="text-slate-700 italic flex-1 text-lg">
+                  "The primary stability achieved with Kindway implants is phenomenal. It has significantly streamlined my immediate loading protocols. The workshops were an added bonus, offering great practical insights."
+                </p>
+                <div className="flex items-center gap-4 mt-4">
+                  <div className="h-12 w-12 rounded-full bg-slate-200 border-2 border-white shadow-sm overflow-hidden flex items-center justify-center font-bold text-slate-500 text-sm">
+                    Dr. P
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900">Dr. Patel</h4>
+                    <span className="text-xs text-slate-500">Maxillofacial Surgeon, Mumbai</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+              <div className="bg-slate-50 p-8 rounded-3xl h-full flex flex-col gap-6 shadow-sm border border-slate-100 relative">
+                <div className="text-teal-500 absolute top-8 right-8 text-6xl opacity-20 font-serif">"</div>
+                <div className="flex gap-1 text-teal-500">
+                  {"★★★★★".split("").map((star, i) => <span key={i}>{star}</span>)}
+                </div>
+                <p className="text-slate-700 italic flex-1 text-lg">
+                  "Kindway BioReZens' synthetic bone grafts are incredibly reliable. I've observed excellent radiographic fill and soft tissue healing. They offer premium quality at a price point that makes sense for my practice."
+                </p>
+                <div className="flex items-center gap-4 mt-4">
+                  <div className="h-12 w-12 rounded-full bg-slate-200 border-2 border-white shadow-sm overflow-hidden flex items-center justify-center font-bold text-slate-500 text-sm">
+                    Dr. S
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900">Dr. Sharma</h4>
+                    <span className="text-xs text-slate-500">Periodontist, Delhi</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+              <div className="bg-slate-50 p-8 rounded-3xl h-full flex flex-col gap-6 shadow-sm border border-slate-100 relative">
+                <div className="text-teal-500 absolute top-8 right-8 text-6xl opacity-20 font-serif">"</div>
+                <div className="flex gap-1 text-teal-500">
+                  {"★★★★★".split("").map((star, i) => <span key={i}>{star}</span>)}
+                </div>
+                <p className="text-slate-700 italic flex-1 text-lg">
+                  "Attending their training seminar completely changed how our clinic handles complex augmentations. The mobile setup they demonstrate is brilliant in its efficiency and hygiene standards."
+                </p>
+                <div className="flex items-center gap-4 mt-4">
+                  <div className="h-12 w-12 rounded-full bg-slate-200 border-2 border-white shadow-sm overflow-hidden flex items-center justify-center font-bold text-slate-500 text-sm">
+                    Dr. M
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900">Dr. Mehta</h4>
+                    <span className="text-xs text-slate-500">Implantologist, Pune</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer CTA */}
       <section className="py-24 bg-slate-900 w-full text-center relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-8 flex flex-col items-center gap-8 relative z-10">

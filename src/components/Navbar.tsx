@@ -17,6 +17,7 @@ const navLinks = [
     { name: "About", href: "/about" },
     { name: "Products", href: "/products" },
     { name: "Training & Workshops", href: "/training" },
+    { name: "Education", href: "/education" },
     { name: "Mobile Dental Clinic", href: "/services" },
     { name: "Contact Us", href: "/contact" },
 ];
