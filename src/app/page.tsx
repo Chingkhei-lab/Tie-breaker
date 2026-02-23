@@ -42,7 +42,7 @@ export default function Home() {
           >
             {/* REAL HERO IMAGE - Replaces the generic icon box */}
             <img
-              src="https://images.unsplash.com/photo-1606811971618-4486d14f3f72?auto=format&fit=crop&w=800"
+              src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800"
               alt="Dentist performing surgery"
               className="object-cover w-full h-full"
             />

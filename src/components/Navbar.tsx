@@ -57,9 +57,9 @@ export default function Navbar() {
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className={`text-sm font-medium transition-colors hover:text-teal-600 min-h-[44px] flex items-center ${isActive
-                                    ? "text-teal-600 dark:text-teal-400"
-                                    : "text-slate-600 dark:text-slate-300 dark:hover:text-teal-400"
+                                className={`text-sm font-bold transition-all px-4 py-2 rounded-full min-h-[44px] flex items-center ${isActive
+                                    ? "bg-teal-50 text-teal-700 shadow-sm dark:bg-teal-900/30 dark:text-teal-400"
+                                    : "text-slate-600 hover:bg-slate-50 hover:text-teal-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-teal-400"
                                     }`}
                             >
                                 {link.name}
@@ -98,9 +98,9 @@ export default function Navbar() {
                                         key={link.name}
                                         href={link.href}
                                         onClick={() => setIsOpen(false)}
-                                        className={`block text-lg font-medium transition-colors hover:text-teal-600 min-h-[44px] py-2 ${isActive
-                                                ? "text-teal-600 dark:text-teal-400"
-                                                : "text-slate-800 dark:text-slate-200"
+                                        className={`block text-lg font-bold transition-all min-h-[44px] py-3 px-4 rounded-xl ${isActive
+                                            ? "bg-teal-50 text-teal-700 border-l-4 border-teal-600 dark:bg-teal-900/30 dark:text-teal-400 dark:border-teal-400"
+                                            : "text-slate-800 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800"
                                             }`}
                                     >
                                         {link.name}
