@@ -138,7 +138,56 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Clinical Results & Testimonials */}
+      {/* Clinical Results Gallery */}
+      <section className="py-24 bg-slate-50 w-full border-t border-slate-100">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-sm font-bold tracking-widest uppercase text-teal-600 mb-2">Before & After</h2>
+            <h3 className="text-3xl md:text-5xl font-bold text-slate-900 leading-tight">Clinical Results Gallery</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <Card className="overflow-hidden border-slate-100 shadow-md">
+                <div className="flex aspect-video bg-slate-200">
+                  <div className="w-1/2 relative border-r-2 border-white">
+                    <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=400&q=80" alt="Before" className="w-full h-full object-cover grayscale" />
+                    <span className="absolute bottom-2 left-2 bg-slate-900/70 text-white text-xs px-2 py-1 rounded">Before</span>
+                  </div>
+                  <div className="w-1/2 relative">
+                    <img src="https://images.unsplash.com/photo-1598256989800-fea5ce5146f2?auto=format&fit=crop&w=400&q=80" alt="After" className="w-full h-full object-cover" />
+                    <span className="absolute bottom-2 right-2 bg-teal-600 text-white text-xs px-2 py-1 rounded">After</span>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <h4 className="font-bold text-lg mb-2">Severe Bone Loss Restoration</h4>
+                  <p className="text-slate-600 text-sm">Successful vertical ridge augmentation using Kindway Synthetic Bone Graft, followed by immediate implant placement.</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+              <Card className="overflow-hidden border-slate-100 shadow-md">
+                <div className="flex aspect-video bg-slate-200">
+                  <div className="w-1/2 relative border-r-2 border-white">
+                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80" alt="Before" className="w-full h-full object-cover grayscale" />
+                    <span className="absolute bottom-2 left-2 bg-slate-900/70 text-white text-xs px-2 py-1 rounded">Before</span>
+                  </div>
+                  <div className="w-1/2 relative">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=400&q=80" alt="After" className="w-full h-full object-cover" />
+                    <span className="absolute bottom-2 right-2 bg-teal-600 text-white text-xs px-2 py-1 rounded">After</span>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <h4 className="font-bold text-lg mb-2">Full Arch Rehabilitation</h4>
+                  <p className="text-slate-600 text-sm">Patient treated with 4 Kindway Titanium Dental Implants supporting a fixed prosthesis.</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
       <section className="py-24 bg-white w-full border-t border-slate-100">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-16">

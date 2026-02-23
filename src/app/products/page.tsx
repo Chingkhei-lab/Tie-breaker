@@ -12,7 +12,7 @@ const products = [
         name: "Titanium Dental Implant",
         category: "Implants",
         description: "High-grade titanium alloy for superior osseointegration and long-term stability.",
-        image: "/api/placeholder/400/300", // Replace with real image
+        image: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=800",
         features: ["Grade 5 Titanium", "Self-tapping thread", "Micro-surface texturing"]
     },
     {
@@ -20,7 +20,7 @@ const products = [
         name: "Synthetic Bone Graft",
         category: "Regenerative",
         description: "Bioactive synthetic material designed to stimulate natural bone formation.",
-        image: "/api/placeholder/400/300",
+        image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800",
         features: ["Osteoconductive", "Fast absorption", "Granule size: 0.5-1mm"]
     },
     // Add more products here
@@ -46,10 +46,8 @@ export default function ProductsPage() {
                     >
                         <Card className="h-full flex flex-col hover:shadow-lg transition-shadow">
                             <div className="h-48 bg-slate-100 relative overflow-hidden rounded-t-xl">
-                                {/* Replace this div with <Image /> component */}
-                                <div className="w-full h-full bg-slate-200 flex items-center justify-center text-slate-400">
-                                    Product Image
-                                </div>
+                                {/* Using native img to bypass next/image domain config */}
+                                <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
                                 <Badge className="absolute top-4 right-4 bg-teal-600">{product.category}</Badge>
                             </div>
                             <CardHeader>

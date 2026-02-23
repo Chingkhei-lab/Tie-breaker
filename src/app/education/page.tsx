@@ -11,7 +11,7 @@ const resources = [
         id: 1,
         title: "Fundamentals of Osseointegration",
         type: "Article",
-        icon: <FileText className="h-6 w-6 text-teal-600" />,
+        image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800",
         description: "A deep dive into the biological processes behind successful dental implants and bone healing.",
         duration: "10 min read"
     },
@@ -19,7 +19,7 @@ const resources = [
         id: 2,
         title: "Handling Synthetic Bone Grafts",
         type: "Video Guide",
-        icon: <Video className="h-6 w-6 text-teal-600" />,
+        image: "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800",
         description: "Step-by-step visual guide on preparing and placing synthetic graft materials for ridge augmentation.",
         duration: "15 min video"
     },
@@ -27,7 +27,7 @@ const resources = [
         id: 3,
         title: "Advanced Prosthetic Protocols",
         type: "Webinar Replay",
-        icon: <PlayCircle className="h-6 w-6 text-teal-600" />,
+        image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800",
         description: "Dr. Sharma discusses immediate loading protocols and full-arch rehabilitation.",
         duration: "45 min webinar"
     }
@@ -51,14 +51,14 @@ export default function EducationPage() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ delay: idx * 0.1 }}
                     >
-                        <Card className="h-full flex flex-col hover:shadow-lg transition-shadow border-slate-100 bg-white">
-                            <CardHeader className="flex flex-row items-center gap-4 pb-4">
-                                <div className="h-12 w-12 rounded-lg bg-teal-50 flex items-center justify-center">
-                                    {resource.icon}
-                                </div>
+                        <Card className="h-full flex flex-col hover:shadow-lg transition-shadow border-slate-100 bg-white overflow-hidden">
+                            <div className="w-full h-48 relative">
+                                <img src={resource.image} alt={resource.title} className="w-full h-full object-cover" />
+                            </div>
+                            <CardHeader className="pb-4">
                                 <div>
+                                    <span className="text-xs font-semibold uppercase text-teal-600 tracking-wider block mb-1">{resource.type}</span>
                                     <CardTitle className="text-lg leading-tight">{resource.title}</CardTitle>
-                                    <span className="text-xs font-semibold uppercase text-teal-600 tracking-wider">{resource.type}</span>
                                 </div>
                             </CardHeader>
                             <CardContent className="flex-1 flex flex-col justify-between">
